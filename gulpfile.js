@@ -7,6 +7,12 @@ function styles() {
         .pipe(gulp.dest('./dist/css'));
 }
 
+function images() {
+    return gulp.src('./src/images/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/images'));
+
+    }
 exports.default = styles;
 exports.watch = function() {
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
